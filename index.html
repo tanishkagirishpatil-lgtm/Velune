@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Velune</title>
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <!-- Font -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body class="purple">
+  <div class="cursor-glow"></div>
+  <div class="stars"></div>
+
+  <!-- Background -->
+
+  <div class="background-glow"></div>
+  <div class="theme-background"></div>
+  <div class="rain-container"></div>
+  <div class="forest-container">
+<div class="forest-trees"></div>
+</div>
+  <div class="ocean-container"></div>
+  <div class="lofi-container"></div>
+  
+
+
+  <!-- Main App -->
+
+  <main class="app">
+
+    <!-- Top -->
+
+    <div class="top-bar">
+
+      <div class="logo">
+
+        ✦ VELUNE
+
+      </div>
+
+      <button class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+    <!-- Timer Section -->
+
+    <section class="hero">
+      <div class="aurora-orb"></div>
+
+      <p class="tag">
+
+        IMMERSIVE FOCUS EXPERIENCE
+
+      </p>
+<div class="dashboard-layout">
+
+<!-- LEFT PANEL -->
+
+<div class="side-panel achievements-panel">
+
+  <h3>
+
+    🏆 Achievements
+
+  </h3>
+  <div class="xp-section">
+
+  <div class="xp-top">
+
+    <span>
+
+      XP
+
+    </span>
+
+    <span id="xpValue">
+
+      0 XP
+
+    </span>
+
+  </div>
+
+  <div class="xp-bar">
+
+    <div id="xpFill"></div>
+
+  </div>
+
+  <p id="levelText">
+
+    Level 1
+
+  </p>
+
+</div>
+
+  <div class="achievement-item">
+
+    <span>🥇 First Lap</span>
+
+    <span id="firstLapStatus"
+class="locked">
+
+  Locked
+
+</span>
+
+  </div>
+
+  <div class="achievement-item">
+
+    <span>🔥 5 Laps</span>
+
+    <span id="fiveLapStatus"
+class="locked">
+
+  Locked
+
+</span>
+  </div>
+
+  <div class="achievement-item">
+
+    <span>⚡ Focus Master</span>
+
+    <span id="focusMasterStatus"
+class="locked">
+
+      Locked
+
+    </span>
+
+  </div>
+
+</div>
+<div class="center-panel">
+
+
+      <!-- Ring -->
+
+      <div class="timer-ring">
+        <div class="particles">
+
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+ </div>
+
+        <svg width="420" height="420">
+
+          <circle
+            class="ring-bg"
+            cx="210"
+            cy="210"
+            r="180"
+          ></circle>
+
+          <circle
+            class="ring-progress"
+            cx="210"
+            cy="210"
+            r="180"
+          ></circle>
+
+        </svg>
+
+        <div class="timer-content">
+
+          <h1 id="display">
+
+            00:00:00
+
+          </h1>
+
+          <div class="time-labels">
+
+            <span>HR</span>
+            <span>MIN</span>
+            <span>SEC</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+
+      <div class="controls">
+        <button id="focusBtn">
+
+         <i class="fa-solid fa-expand"></i>
+
+        </button>
+
+        <button id="startBtn">
+
+          <i class="fa-solid fa-play"></i>
+
+        </button>
+
+        <button id="pauseBtn">
+
+          <i class="fa-solid fa-pause"></i>
+
+        </button>
+
+        <button id="resetBtn">
+
+          <i class="fa-solid fa-rotate-right"></i>
+
+        </button>
+
+        <button id="lapBtn">
+
+           <i class="fa-solid fa-flag"></i>
+
+        </button>
+
+      </div>
+
+      <div class="lap-counter">
+
+  <i class="fa-solid fa-flag"></i>
+
+  <span id="lapCount">
+
+    0 Laps
+
+  </span>
+
+</div>
+
+</div>
+
+    <!-- RIGHT PANEL -->
+
+<div class="side-panel">
+
+  <h3>
+
+    ⏱ Lap History
+
+  </h3>
+
+  <div id="lapHistory"></div>
+
+</div>
+
+</div>
+
+      <!-- Ambient Sounds -->
+
+      <div class="sound-panel">
+
+        <h3>
+
+          <i class="fa-solid fa-music"></i>
+
+          Ambient Sounds
+
+        </h3>
+
+        <div class="sound-options">
+
+          <button
+            class="sound-btn active-sound"
+            data-sound="assets/audio/lofi.mp3"
+            data-theme="purple"
+          >
+            🎧 Lo-fi
+          </button>
+
+          <button
+            class="sound-btn"
+            data-sound="assets/audio/rain.mp3"
+            data-theme="blue"
+          >
+            💧 Rain
+          </button>
+
+          <button
+            class="sound-btn"
+            data-sound="assets/audio/forest.mp3"
+            data-theme="green"
+          >
+            🌲 Forest
+          </button>
+
+          <button
+            class="sound-btn"
+            data-sound="assets/audio/ocean.mp3"
+            data-theme="cyan"
+          >
+            🌊 Ocean
+          </button>
+
+        </div>
+
+      </div>
+      <div class="quote-box">
+
+  <p id="quoteText">
+
+    “Discipline creates freedom.”
+
+  </p>
+
+</div>
+
+    </section>
+
+  </main>
+
+  <!-- Audio -->
+
+  <audio
+    id="focusAudio"
+    loop
+  >
+
+    <source
+      src="assets/audio/lofi.mp3"
+      type="audio/mp3"
+    >
+
+  </audio>
+
+  <div id="toast">
+
+  Achievement Unlocked
+
+</div>
+
+  <!-- JS -->
+
+  <script src="script.js"></script>
+<div class="session-popup">
+
+  <h2>
+
+    🎉 Focus Session Complete
+
+  </h2>
+
+  <p>
+
+    Amazing work. Stay consistent.
+
+  </p>
+
+  <button id="closePopup">
+
+    Continue
+
+  </button>
+
+</div>
+</body>
+
+</html>
