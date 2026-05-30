@@ -20,6 +20,12 @@ document.getElementById("resetBtn");
 const focusAudio =
 document.getElementById("focusAudio");
 
+const musicToggle =
+document.getElementById("musicToggle");
+
+musicToggle.innerHTML =
+'<i class="fa-solid fa-volume-high"></i>';
+
 const soundButtons =
 document.querySelectorAll(".sound-btn");
 
@@ -27,6 +33,10 @@ const themeBackground =
 document.querySelector(
   ".theme-background"
 );
+
+
+
+
 
 // ==========================
 // TIMER
@@ -156,6 +166,32 @@ resetBtn.onclick = ()=>{
 // ==========================
 
 let playing = false;
+
+
+musicToggle.innerHTML =
+'<i class="fa-solid fa-volume-high"></i>';
+
+musicToggle.onclick = ()=>{
+
+  if(focusAudio.paused){
+
+    focusAudio.play();
+
+      musicToggle.innerHTML =
+    '<i class="fa-solid fa-volume-high"></i>';
+
+  }
+
+  else{
+
+    focusAudio.pause();
+
+     musicToggle.innerHTML =
+    '<i class="fa-solid fa-volume-xmark"></i>';
+
+  }
+
+};
 
 // ==========================
 // SOUND SWITCHING
@@ -831,9 +867,33 @@ document.querySelector(
 
 function createForest(){
 
+  for(let i = 0; i < 100; i++){
+
+  const firefly =
+  document.createElement("div");
+
+  firefly.classList.add(
+    "firefly"
+  );
+
+  firefly.style.left =
+  Math.random() * 100 + "%";
+
+  firefly.style.top =
+  Math.random() * 100 + "%";
+
+  firefly.style.animationDelay =
+  Math.random() * 10 + "s";
+
+  forestContainer.appendChild(
+    firefly
+  );
+
+}
+
   
 
-  for(let i = 0; i < 40; i++){
+  for(let i = 0; i < 100; i++){
 
     const particle =
     document.createElement("div");
@@ -842,9 +902,22 @@ function createForest(){
       "forest-particle"
     );
 
+    const size =
+
+20 + Math.random() * 40;
+
+particle.style.width =
+size + "px";
+
+particle.style.height =
+size + "px";
+
     particle.style.left =
 
     Math.random() * 100 + "vw";
+
+    particle.style.top =
+    Math.random() * 100 + "%";
 
     particle.style.animationDuration =
 
@@ -876,37 +949,93 @@ document.querySelector(
 
 function createOcean(){
 
+
   for(let i = 0; i < 3; i++){
 
-    const wave =
-    document.createElement("div");
+  const wave =
+  document.createElement("div");
 
-    wave.classList.add(
-      "wave"
-    );
+  wave.classList.add(
+    "ocean-wave"
+  );
 
-    wave.style.top =
+  wave.style.bottom =
+  (-50 + i * 120) + "px";
 
-    Math.random() * 80 + "%";
+  wave.style.animationDuration =
+  (18 + i * 6) + "s";
 
-    wave.style.left =
-
-    Math.random() * 80 + "%";
-
-    wave.style.animationDuration =
-
-    (Math.random() * 8 + 8)
-    + "s";
-
-    oceanContainer.appendChild(
-      wave
-    );
-
-  }
+  oceanContainer.appendChild(
+    wave
+  );
 
 }
 
-createOcean();
+  for(let i = 0; i < 8; i++){
+
+  const bubble =
+  document.createElement("div");
+
+  bubble.classList.add(
+    "bubble"
+  );
+
+  const size =
+
+  15 + Math.random() * 60;
+
+  bubble.style.width =
+  size + "px";
+
+  bubble.style.height =
+  size + "px";
+
+  bubble.style.bottom =
+ Math.random() * 100 + "%";
+
+  bubble.style.left =
+  Math.random() * 100 + "%";
+
+  bubble.style.animationDuration =
+  (10 + Math.random() * 12)
+  + "s";
+
+  bubble.style.animationDelay =
+ "-" + (Math.random() * 20) + "s";
+
+  oceanContainer.appendChild(
+    bubble
+  );
+
+}
+for(let i = 0; i < 40; i++){
+
+  const particle =
+  document.createElement("div");
+
+  particle.classList.add(
+    "ocean-particle"
+  );
+
+  particle.style.left =
+  Math.random() * 100 + "%";
+
+  particle.style.top =
+ Math.random() * 100 + "%";
+
+  particle.style.animationDuration =
+  (15 + Math.random() * 10) + "s";
+
+  particle.style.animationDelay =
+  Math.random() * 20 + "s";
+
+  oceanContainer.appendChild(
+    particle
+  );
+
+}
+}
+  createOcean();
 
 // ==========================
 // LOFI EFFECT
@@ -919,7 +1048,7 @@ document.querySelector(
 
 function createLofi(){
 
-  for(let i = 0; i < 5; i++){
+  for(let i = 0; i < 25; i++){
 
     const orb =
     document.createElement("div");
@@ -958,3 +1087,86 @@ function createLofi(){
 
 createLofi();
 
+
+const orbContainer =
+document.querySelector(".floating-orbs");
+
+for(let i = 0; i < 18; i++){
+
+    const orb =
+    document.createElement("div");
+
+    orb.classList.add(
+        "floating-orb"
+    );
+
+    const size =
+    120 + Math.random() * 250;
+
+    orb.style.width =
+    size + "px";
+
+    orb.style.height =
+    size + "px";
+
+    orb.style.left =
+    Math.random() * 100 + "%";
+
+    orb.style.animationDuration =
+    20 + Math.random() * 20 + "s";
+
+    orb.style.animationDelay =
+    Math.random() * 15 + "s";
+
+    orbContainer.appendChild(
+        orb
+    );
+
+}
+
+// ==========================
+// INTRO SCREEN
+// ==========================
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    setTimeout(()=>{
+
+      document
+      .querySelector(
+        ".intro-screen"
+      )
+      .classList.add(
+        "hide"
+      );
+
+    },3500);
+
+  }
+);
+
+
+
+
+// ==========================
+// LOADER
+// ==========================
+
+window.addEventListener(
+  "load",
+  ()=>{
+
+    setTimeout(()=>{
+
+      document
+      .querySelector(".loader")
+      .classList.add(
+        "hidden"
+      );
+
+    },3000);
+
+  }
+);
