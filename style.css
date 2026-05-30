@@ -3020,71 +3020,9 @@ body.purple .particles span{
    FLOATING LOFI ORBS
 ========================== */
 
-.floating-orbs{
 
-    position:fixed;
 
-    inset:0;
 
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:-3;
-
-    display:none;
-
-}
-
-body.purple .floating-orbs{
-
-    display:block;
-
-}
-
-.floating-orb{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(139,92,246,0.20),
-        rgba(6,182,212,0.08),
-        transparent 75%
-    );
-
-    filter:blur(40px);
-
-    opacity:0.5;
-
-    animation:
-    orbFloat linear infinite;
-}
-
-@keyframes orbFloat{
-
-    0%{
-        transform:
-        translateY(110vh)
-        translateX(0);
-    }
-
-    50%{
-        transform:
-        translateY(50vh)
-        translateX(50px);
-    }
-
-    100%{
-        transform:
-        translateY(-20vh)
-        translateX(-50px);
-    }
-
-}
 
 /* Forest Trail */
 

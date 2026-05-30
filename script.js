@@ -1088,41 +1088,7 @@ function createLofi(){
 createLofi();
 
 
-const orbContainer =
-document.querySelector(".floating-orbs");
 
-for(let i = 0; i < 18; i++){
-
-    const orb =
-    document.createElement("div");
-
-    orb.classList.add(
-        "floating-orb"
-    );
-
-    const size =
-    120 + Math.random() * 250;
-
-    orb.style.width =
-    size + "px";
-
-    orb.style.height =
-    size + "px";
-
-    orb.style.left =
-    Math.random() * 100 + "%";
-
-    orb.style.animationDuration =
-    20 + Math.random() * 20 + "s";
-
-    orb.style.animationDelay =
-    Math.random() * 15 + "s";
-
-    orbContainer.appendChild(
-        orb
-    );
-
-}
 
 // ==========================
 // INTRO SCREEN
