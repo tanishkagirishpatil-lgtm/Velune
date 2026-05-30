@@ -2743,54 +2743,7 @@ body.cyan{
 
 }
 
-/* Orb */
 
-.lofi-orb{
-
-  position:absolute;
-
-  border-radius:50%;
-
-  background:
-  radial-gradient(
-    circle,
-    var(--theme-glow),
-    transparent 70%
-  );
-
-  filter:blur(30px);
-
-  animation:
-  floatOrb 12s ease-in-out infinite;
-
-}
-
-/* Animation */
-
-@keyframes floatOrb{
-
-  0%{
-
-    transform:
-    translateY(0px);
-
-  }
-
-  50%{
-
-    transform:
-    translateY(-40px);
-
-  }
-
-  100%{
-
-    transform:
-    translateY(0px);
-
-  }
-
-}
 
 /* ==========================
    FOREST TREES
@@ -2976,44 +2929,6 @@ body.cyan{
 
   mix-blend-mode:screen;
 
-}
-
-/* Hide by default */
-.particles{
-  display:none;
-}
-
-/* Show only in Lo-fi */
-body.purple .particles{
-  display:flex;
-}
-
-.particles{
-  animation: orbit 20s linear infinite;
-}
-
-@keyframes orbit{
-  from{
-    transform: rotate(0deg);
-  }
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-body.purple .particles span{
-  animation:
-    floatParticle 8s ease-in-out infinite,
-    blinkParticle 2s ease-in-out infinite;
-}
-
-@keyframes blinkParticle{
-  0%,100%{
-    opacity:.3;
-  }
-  50%{
-    opacity:1;
-  }
 }
 
 /* ==========================
