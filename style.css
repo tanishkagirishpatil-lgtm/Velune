@@ -3408,3 +3408,18 @@ body.green .forest-trail{
 }
 }
 
+
+/* Remove glowing background in Lo-fi */
+
+body.purple .background-glow::before,
+body.purple .background-glow::after{
+    display:none;
+}
+
+body.purple .aurora-orb{
+    display:none;
+}
+
+body.purple .hero-card::after{
+    display:none;
+}
