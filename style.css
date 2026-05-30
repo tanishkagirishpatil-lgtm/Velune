@@ -3462,14 +3462,6 @@ body.green .forest-trail{
 }
 
 
-.floating-orb{
-    transform:scale(0.5);
-    opacity:0.3;
-}
-
-.floating-orbs{
-    overflow:hidden;
-}
 
 .background-glow::before,
 .background-glow::after{
